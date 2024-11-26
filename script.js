@@ -59,13 +59,27 @@ window.addEventListener('scroll', function() {
 });
 
 //------------------------------------------------------------------------
-//descarga la hoja de vida
-function downloadCV() {
-    const link = document.createElement('a');
-    link.href = 'ruta-del-archivo/CV.pdf';
-    link.download = 'CV.pdf';
-    link.click();
+// Función para mostrar u ocultar el menú de selección de idioma
+function toggleLanguageMenu() {
+    var menu = document.getElementById('languageMenu');
+    // Alternar la visibilidad del menú
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
 }
+
+// Función para descargar el archivo según el idioma seleccionado
+function downloadCV(language) {
+    var fileName = language === 'es' ? './CV/Curriculum Es.pdf' : './CV/Curriculum En.pdf';
+
+    // Simular la descarga del archivo
+    var link = document.createElement('a');
+    link.href = fileName;  // Aquí asumes que los archivos están en el mismo servidor
+    link.download = fileName;
+    link.click();
+
+    // Ocultar el menú después de la selección
+    document.getElementById('languageMenu').style.display = 'none';
+}
+
 
 //----------------------------------------------------------------------------
 //ventana modal de la galeria
@@ -149,7 +163,7 @@ const translations = {
         about2: "I am passionate about technology and <strong>innovative problem-solving</strong>. My curiosity has always driven me to explore tools and develop projects that blend <strong>creativity with functionality</strong>.",
         about3: "Recognized for being <strong>curious, determined, and self-reliant</strong>, I prioritize <strong>continuous learning</strong> to thrive in a global context. This mindset empowers me to tackle challenges and contribute to meaningful progress.",
         about4: "My goal is to refine my technical and interpersonal skills, creating <strong>impactful solutions</strong> while embracing growth and new opportunities.",
-        download: "Download CV",
+        download: "Select the language of the CV download",
         interest1: "Programming",
         interestp1: "I enjoy creating functional and innovative code.",
         interest2: "Sport",
@@ -177,7 +191,7 @@ const translations = {
         curris1: "Systems Engineer",
         currif1: "Present",
         currip1: "I am gaining a solid foundation in the creation of IT systems, programming, and the use of advanced technologies to solve complex problems.",
-        curris2: "Seed plan",
+        curris2: "Development Analyst (Seed plan)",
         currip2: "I learned programming, where I gained knowledge that allowed me to develop a solid understanding of programming fundamentals.",
         curris3: "Software Development Technician",
         currip3: "With training in the creation of applications and IT solutions, using programming languages, and agile approaches for software development.",
@@ -221,7 +235,7 @@ const translations = {
         about2: "Me apasiona la tecnología y <strong>la solución innovadora de problemas</strong>. Desde siempre, mi curiosidad me ha llevado a explorar herramientas y desarrollar proyectos que combinan <strong>creatividad con funcionalidad</strong>.",
         about3: "Reconocida por ser <strong>curiosa, determinada e independiente</strong>, priorizo el <strong>aprendizaje continuo</strong> para destacar a nivel global. Esta mentalidad me permite afrontar desafíos y contribuir al progreso significativo.",
         about4: "Mi objetivo es perfeccionar mis habilidades técnicas y humanas, creando <strong>soluciones impactantes</strong> mientras abrazo el crecimiento y nuevas oportunidades.",
-        download: "Descargar CV",
+        download: "Selecciona el idioma de descarga del CV",
         interest1: "Programación",
         interestp1: "Disfruto creando código funcional e innovador.",
         interest2: "Deporte",
@@ -249,7 +263,7 @@ const translations = {
         curris1: "Ingeniero de Sistemas",
         currif1: "Presente",
         currip1: "Estoy adquiriendo una base sólida en la creación de sistemas informáticos, programación y el uso de tecnologías avanzadas para resolver problemas complejos.",
-        curris2: "Plan de semilla",
+        curris2: "Analista de desarrollo (Plan semilla)",
         currip2: "Aprendí programación, donde adquirí conocimientos que me permitieron desarrollar una comprensión sólida de los fundamentos de la programación.",
         curris3: "Técnico en Desarrollo de Software",
         currip3: "Con formación en la creación de aplicaciones y soluciones informáticas, utilizando lenguajes de programación y enfoques ágiles para el desarrollo de software.",

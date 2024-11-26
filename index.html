@@ -69,11 +69,21 @@
             <p data-translate="about4"></p>
         </div>
         <br>
-        <button onclick="downloadCV()">
+        <button onclick="toggleLanguageMenu()">
             <span data-translate="download"></span>
             <i class="fa-solid fa-download"></i>
-            <span class="overlay"></span>
+            <div id="languageMenu" class="language-menu">
+                <button onclick="downloadCV('es')" class="language-btn">
+                    Spanish
+                    <span class="overlay"></span>
+                </button>
+                <button onclick="downloadCV('en')" class="language-btn">
+                    English
+                    <span class="overlay"></span>
+                </button>
+            </div>
         </button>
+
     </section>
 <!--------------------------------------------------------------------------------------------------->
 <!-- SESION INTERESES -->

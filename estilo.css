@@ -130,7 +130,7 @@ html{
     max-width: 350px;
     margin: auto;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 20;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 1.0);
 }
 
@@ -243,7 +243,32 @@ html{
     z-index: 10;
 
 }
-.sobremi button .overlay{
+
+.language-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 5px;
+}
+
+.language-btn {
+    cursor: pointer;
+    background-color: transparent;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+
+/* Estilo para la superposición (overlay) */
+.language-btn .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -253,12 +278,16 @@ html{
     transition: 1s;
 }
 
-.sobremi button:hover .overlay{
+.language-btn:hover .overlay {
     width: 100%;
     background-color: #bbbbbb5b;
     color: #000;
-
 }
+
+button {
+    position: relative;
+}
+
 /*---------------------------------------------------------------------------*/
 /*SESION INTERESES*/
 
