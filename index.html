@@ -5,31 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Professional Portfolio</title>
-    <link rel="icon" href="./img/icon.svg" type="image/x-icon">
+    <title>Portfolio</title>
+    <link rel="icon" href="./img/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
+    <div class="language-switcher">
+        <button id="spanishButton">Spanish</button>
+        <button id="englishButton">English</button>
+
+    </div>
 <!------------------------------------------------------------------------------------------>
 <!-- MENU -->
     <div class="contenedor-header">
         <header>
             <nav id="nav">
                 <ul>
-                    <li><a href="#inicio" onclick="seleccionar()">HOME</a></li>
-                    <li><a href="#sobremi" onclick="seleccionar()">ABOUT ME</a></li>
-                    <li><a href="#intereses" onclick="seleccionar()">INTEREST</a></li>
-                    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
-                    <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
-                    <li><a href="#certificados" onclick="seleccionar()">CERTIFICATES</a></li>
-                    <li><a href="#portfolio" onclick="seleccionar()">PROJECTS</a></li>
-                    <li><a href="#logros" onclick="seleccionar()">ACHIEVEMENTS</a></li>
-                    <li><a href="#referencias" onclick="seleccionar()">REFERENCES</a></li>
+                    <li><a href="#inicio" onclick="seleccionar()" data-translate="home"></a></li>
+                    <li><a href="#sobremi" onclick="seleccionar()" data-translate="about"></a></li>
+                    <li><a href="#intereses" onclick="seleccionar()" data-translate="interest"></a></li>
+                    <li><a href="#skills" onclick="seleccionar()" data-translate="skills"></a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()" data-translate="curriculum"></a></li>
+                    <li><a href="#certificados" onclick="seleccionar()" data-translate="certificates"></a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()" data-translate="projects"></a></li>
+                    <li><a href="#logros" onclick="seleccionar()" data-translate="achievements"></a></li>
+                    <li><a href="#referencias" onclick="seleccionar()" data-translate="references"></a></li>
                 </ul>
             </nav>
             <div class="nav-responsive" onclick="mostrarOcultarMenu()">
                 <i class="fa-solid fa-bars"></i>
             </div>
+
         </header>
     </div>
 
@@ -42,9 +48,9 @@
             </div>
             <h1>VALENTINA V. BOTERO</h1>
             <br>
-            <h2>Est. Systems Engineering | Software Developer | Junior in Technology</h2>
+            <h2 data-translate="profession"></h2>
             <div class="redes">
-                <a href="https://www.instagram.com/velasquezbotero4/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://discord.com/users/565355154082365465"><i class="fa-brands fa-discord"></i></a>
                 <a href="https://github.com/valenbotero14"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/valentina-velasquez-botero-35636622a/"><i class="fa-brands fa-linkedin-in"></i></a>
                 <a href="https://wa.me/573176759606?text=Hola,Tuuu."><i class="fa-brands fa-whatsapp"></i></a>
@@ -56,61 +62,55 @@
     <!-- SECCION SOBRE MI -->
     <section id="sobremi" class="sobremi">
         <div class="contenido-seccion">
-            <h2>ABOUT ME</h2>
-            <p><strong>Hello, I am Valentina Velasquez Botero.</strong></p>
-            <p>
-                I am passionate about technology and creating innovative solutions. Since childhood, my curiosity has driven me to explore tools and develop projects that blend creativity with functionality.
-            </p>
-            <p>
-                Known for being <strong>curious, brave, and independent</strong>, I focus on <strong>continuous learning</strong> to excel globally. My commitment to growth enables me to address challenges and contribute to a brighter future.
-            </p>
-            <p>
-                My current mission is to strengthen technical skills, aiming to design impactful solutions while embracing professional growth and new challenges.
-            </p>
+            <h2 data-translate="about"></h2>
+            <p data-translate="about1"></p>
+            <p data-translate="about2"></p>
+            <p data-translate="about3"></p>
+            <p data-translate="about4"></p>
         </div>
         <br>
         <button onclick="downloadCV()">
-            Dowload CV <i class="fa-solid fa-download"></i>
+            <span data-translate="download"></span>
+            <i class="fa-solid fa-download"></i>
             <span class="overlay"></span>
         </button>
-        </div>
     </section>
 <!--------------------------------------------------------------------------------------------------->
 <!-- SESION INTERESES -->
 
 <section id="intereses" class="intereses">
     <div class="contenido-seccion">
-        <h2>MY INTERESTS</h2>
+        <h2 data-translate="interest"></h2>
         <div class="intereses-grid">
             <div class="interes">
                 <i class="fa-solid fa-code"></i>
-                <h3>Programming</h3>
-                <p>I enjoy creating functional and innovative code.</p>
+                <h3 data-translate="interest1"></h3>
+                <p data-translate="interestp1"></p>
             </div>
             <div class="interes">
                 <i class="fa-solid fa-basketball"></i>
-                <h3>Sport</h3>
-                <p>I improve my physical and mental health, increase my energy, and develop discipline and teamwork.</p>
+                <h3 data-translate="interest2"></h3>
+                <p data-translate="interestp2"></p>
             </div>
             <div class="interes">
                 <i class="fa-solid fa-rocket"></i>
-                <h3>Technology</h3>
-                <p>Exploring new tech trends is my passion.</p>
+                <h3 data-translate="interest3"></h3>
+                <p data-translate="interestp3"></p>
             </div>
             <div class="interes">
                 <i class="fa-solid fa-book"></i>
-                <h3>Learning</h3>
-                <p>Continuous learning keeps me inspired and motivated.</p>
+                <h3 data-translate="interest4"></h3>
+                <p data-translate="interestp4"></p>
             </div>
             <div class="interes">
                 <i class="fa-solid fa-users"></i>
-                <h3>Collaboration</h3>
-                <p>Working with others to solve problems is one of my strengths.</p>
+                <h3 data-translate="interest5"></h3>
+                <p data-translate="interestp5"></p>
             </div>
             <div class="interes">
                 <i class="fa-solid fa-book"></i>
-                <h3>Libros</h3>
-                <p>I expand my knowledge, improve my concentration, and connect with new perspectives and emotions.</p>
+                <h3  data-translate="interest6"></h3>
+                <p data-translate="interestp6"></p>
             </div>
         </div>
     </div>
@@ -119,12 +119,12 @@
     <!-- SECCION SKILLS -->
     <section class="skills" id="skills">
         <div class="contenido-seccion">
-            <h2>SkILLS</h2>
+            <h2 data-translate="skills"></h2>
             <div class="fila">
                 <!-- Technical Skill -->
                 <div class="col">
                     <br>
-                    <h3>Technical Skills</h3>
+                    <h3 data-translate="skills1"></h3>
                     <br>
                     <div class="skill">
                         <span>Javascript</span>
@@ -196,10 +196,10 @@
                 <!-- Professional Skills -->
                 <div class="col">
                     <br>
-                    <h3>Professional Skills</h3>
+                    <h3 data-translate="skills2"></h3>
                     <br>
                     <div class="skill">
-                        <span>Comunication</span>
+                        <span data-translate="skillsh1"></span>
                         <div class="barra-skill">
                             <div class="progreso">
                                 <span>60%</span>
@@ -207,7 +207,7 @@
                         </div>
                     </div>
                     <div class="skill">
-                        <span>TeamWork</span>
+                        <span data-translate="skillsh2"></span>
                         <div class="barra-skill">
                             <div class="progreso">
                                 <span>75%</span>
@@ -215,7 +215,7 @@
                         </div>
                     </div>
                     <div class="skill">
-                        <span>Leadership</span>
+                        <span data-translate="skillsh3"></span>
                         <div class="barra-skill">
                             <div class="progreso">
                                 <span>70%</span>
@@ -223,7 +223,7 @@
                         </div>
                     </div>
                     <div class="skill">
-                        <span>Dedication</span>
+                        <span data-translate="skillsh4"></span>
                         <div class="barra-skill">
                             <div class="progreso">
                                 <span>100%</span>
@@ -231,7 +231,7 @@
                         </div>
                     </div>
                     <div class="skill">
-                        <span>Adaptability to change</span>
+                        <span data-translate="skillsh5"></span>
                         <div class="barra-skill">
                             <div class="progreso">
                                 <span>85%</span>
@@ -239,7 +239,7 @@
                         </div>
                     </div>
                     <div class="skill">
-                        <span>Integrity and professional ethics</span>
+                        <span data-translate="skillsh6"></span>
                         <div class="barra-skill">
                             <div class="progreso">
                                 <span>90%</span>
@@ -247,7 +247,7 @@
                         </div>
                     </div>
                     <div class="skill">
-                        <span>Initiative</span>
+                        <span data-translate="skillsh7"></span>
                         <div class="barra-skill">
                             <div class="progreso">
                                 <span>90%</span>
@@ -255,7 +255,7 @@
                         </div>
                     </div>
                     <div class="skill">
-                        <span>Learning ability</span>
+                        <span data-translate="skillsh8"></span>
                         <div class="barra-skill">
                             <div class="progreso">
                                 <span>80%</span>
@@ -266,51 +266,51 @@
             </div>
         </div>
         <!-- Nota adicional -->
-                    <div class="nota-adicional">
-                        <p><strong style="color: rgb(218, 26, 26);">¡Important!</strong> Aside from the skills mentioned, I continue to expand my competencies through continuous learning.</p>
+                    <div class="nota-adicional" >
+                        <p data-translate="skillsn"></p>
                     </div>
     </section>
 <!--------------------------------------------------------------------------------------------------------------------------------->
     <!-- SECCION CURRICULUM -->
     <section id="curriculum" class="curriculum">
         <div class="contenido-seccion">
-            <h2>CURRICULUM</h2>
+            <h2 data-translate="curriculum"></h2>
             <br>
             <div class="fila">
                 <div class="col izquierda">
-                    <h3>Education</h3>
+                    <h3 data-translate="currit1"></h3>
                     <div class="item izq">
-                        <h4>Systems Engineer</h4>
+                        <h4 data-translate="curris1"></h4>
                         <span class="casa">Universidad Catolica de Oriente</span>
-                        <span class="fecha">Actualidad</span>
-                        <p>I am gaining a solid foundation in the creation of IT systems, programming, and the use of advanced technologies to solve complex problems.</p>
+                        <span class="fecha" data-translate="currif1"></span>
+                        <p data-translate="currip1"></p>
                         <div class="conectori">
                             <div class="circuloi"></div>
                         </div>
                     </div>
                     <div class="item izq">
-                        <h4>Seed plan</h4>
+                        <h4 data-translate="curris2"></h4>
                         <span class="casa">XpertGroup</span>
                         <span class="fecha">2023</span>
-                        <p>I learned programming, where I gained knowledge that allowed me to develop a solid understanding of programming fundamentals.</p>
+                        <p data-translate="currip2"></p>
                         <div class="conectori">
                             <div class="circuloi"></div>
                         </div>
                     </div>
                     <div class="item izq">
-                        <h4>Software Development Technician</h4>
+                        <h4 data-translate="curris3"></h4>
                         <span class="casa">Servicio Nacional de Aprendizaje</span>
                         <span class="fecha">2018</span>
-                        <p>With training in the creation of applications and IT solutions, using programming languages, and agile approaches for software development</p>
+                        <p data-translate="currip3"></p>
                         <div class="conectori">
                             <div class="circuloi"></div>
                         </div>
                     </div>
                     <div class="item izq">
-                        <h4>Informatics</h4>
+                        <h4 data-translate="curris4"></h4>
                         <span class="casa">Fundación Celia Duque de Duque</span>
                         <span class="fecha">2018</span>
-                        <p>Graduated from a high school with a technical focus in computer science, gaining foundational knowledge in programming, IT systems, and technology management.</p>
+                        <p data-translate="currip4"></p>
                         <div class="conectori">
                             <div class="circuloi"></div>
                         </div>
@@ -318,12 +318,12 @@
                 </div>
 <!--------------------------------------------------------------------------------------------------->
                 <div class="col derecha">
-                    <h3>Professional experience</h3>
+                    <h3 class= "pro" data-translate="currit5"></h3>
                     <div class="item der">
-                        <h4>Market Analytics and Development Analyst</h4>
+                        <h4 data-translate="curris5"></h4>
                         <span class="casa">XM S.A</span>
                         <span class="fecha">2024</span>
-                        <p>I was responsible for performing unit tests, managing data using Excel, and developing SQL queries to optimize processes. I used Python to implement automated solutions and improve efficiency in data analysis.</p>
+                        <p data-translate="currip5"></p>
                         <div class="conectord">
                             <div class="circulod"></div>
                         </div>
@@ -333,14 +333,14 @@
             </div>
         </div>
         <div class="nota-adicional">
-            <p><strong style="color: rgb(218, 26, 26);">¡Important!</strong> I am continuously learning and improving every day, always seeking new challenges. I am currently available to work and contribute my energy and skills to exciting projects..</p>
+            <p data-translate="currin"></p>
         </div>
     </section>
 <!--------------------------------------------------------------------------------------------------------->
     <!-- SECCION CERTIFICATES-->
     <section id="certificados" class="certificados">
         <div class="contenido-seccion">
-            <h2>CERTIFICATES</h2>
+            <h2 data-translate="certificates"></h2>
             <br>
             <div class="carrusel">
             <div class="imagenes">
@@ -380,12 +380,8 @@
             </div>
             <br>
             <!-- Nota adicional con enlace a OneDrive -->
-                <p class="nota-adicional">
-                    If you wish to see more certificates, you can access all of them at <a href="https://drive.google.com/drive/folders/1KzS3HnXKfmnEUpic2mvKahpuQXOpmr8-?usp=drive_link" target="_blank">Google Drive here</a>.
-                </p>
-
+                <p class="nota-adicional" data-translate="certificatesn"></p>
         </section>
-
         <div id="modal" class="modal">
             <span id="close-btn" class="close-btn">&#10005;</span>
             <img id="modal-img" src="" alt="Imagen ampliada">
@@ -395,13 +391,13 @@
 <!-- SECCION PORTFOLIO -->
 <section id="portfolio" class="portfolio">
     <div class="contenido-seccion">
-        <h2>PORTFOLIO</h2>
+        <h2 data-translate="projects"></h2>
         <div class="galeria">
             <div class="proyecto">
                 <img src="./img/imagen1.jpg" alt="">
                 <div class="overlay">
-                    <h3>Technical test</h3><br>
-                    <p>I used various tools to achieve optimal results.</p>
+                    <h3 data-translate="projectst1"></h3><br>
+                    <p data-translate="projectsp1"></p>
                     <br>
                     <div class="enlace">
                         <a href="https://github.com/valenbotero14/Prueba-Tecnica" target="_blank">
@@ -417,30 +413,28 @@
     <!-- SECCION LOGROS-->
     <section id="logros" class="logros">
             <div class="logros-container">
-                <!-- Columna de logros -->
                 <div class="logros-lista">
-                    <h2>ACHIEVEMENTS</h2><br>
+                    <h2 data-translate="achievements"></h2><br>
                     <ul>
-                        <li><strong>Operational Excellence</strong> - XM S.A (2024)</li>
-                        <li><strong>First place with web application</strong> - EPEMTI (2018)</li>
-                        <li><strong>Best graduation project</strong> - Fundacion Celia Duque (2018)</li>
+                        <li data-translate="achievements1"></li>
+                        <li data-translate="achievements2"></li>
+                        <li data-translate="achievements3"></li>
                     </ul>
                 </div>
                 <!-- Columna de insignias -->
                 <div class="insignias">
-                    <h2>BADGES</h2>
+                    <h2 data-translate="badges"></h2>
                     <div class="insignia">
                         <img src="./badges/imagen1.jpg" alt="Insignia 1">
-                        <p>Badge of Agile Explorer</p>
+                        <p data-translate="badges1"></p>
                     </div>
                     <div class="insignia">
                         <img src="./badges/imagen2.jpg" alt="Insignia 2">
-                        <p>Badge of Explore Emerging Tech</p>
+                        <p data-translate="badges2"></p>
                     </div>
                 </div>
         <!-- Nota adicional -->
-        <div class="nota-adicional">
-            If you wish to see more badges, you can access all of them at <a href="https://www.credly.com/users/valentina-velasquez-botero" target="_blank">Credly here</a>.
+        <div class="nota-adicional" data-translate="achievementsn">
         </div>
             </div>
     </section>
@@ -448,15 +442,19 @@
 <!----SECCION REFERENCIAS-->
 <section id="referencias" class="referencias">
     <div class="referencias-container">
-        <h2>REFERENCES</h2>
+        <h2 data-translate="references"></h2>
         <div class="referencias-lista">
             <div class="referencia">
-                <img src="./img/fondo.jpg" alt="Foto de Referencia 1">
-                <blockquote>
-                    ""
-                </blockquote>
-                <p class="nombre"></p>
-                <p class="cargo"></p>
+                <img src="./img/luz.jpg" alt="Foto de Referencia 1">
+                <blockquote data-translate="references1"></blockquote>
+                <p class="nombre">Luz Mery Rios</p>
+                <p class="cargo" data-translate="referencesc1"></p>
+            </div>
+            <div class="referencia">
+                <img src="./img/cami.jpg" alt="Foto de Referencia 1">
+                <blockquote data-translate="references2"></blockquote>
+                <p class="nombre">Camila Grajales Perez</p>
+                <p class="cargo" data-translate="referencesc2"></p>
             </div>
         </div>
     </div>
@@ -469,12 +467,13 @@
         <i class="fa-solid fa-angles-up"></i>
     </a>
     <div class="redes">
-        <a href="https://www.instagram.com/velasquezbotero4/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://discord.com/users/565355154082365465"><i class="fa-brands fa-discord"></i></a>
         <a href="https://github.com/valenbotero14"><i class="fa-brands fa-github"></i></a>
         <a href="https://www.linkedin.com/in/valentina-velasquez-botero-35636622a/"><i class="fa-brands fa-linkedin-in"></i></a>
         <a href="https://wa.me/573176759606?text=Hola,Tuuu."><i class="fa-brands fa-whatsapp"></i></a>
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=valentinavelazquez172@gmail.com"><i class="fa-regular fa-envelope"></i></a>
     </div>
+    <h4 style="font-family: 'Roboto', sans-serif; font-size: 11px;">&copy VALENTINA V. BOTERO</h4>
 </footer>
 
     <script src="script.js"></script>
