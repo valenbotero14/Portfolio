@@ -304,20 +304,30 @@ const setLanguage = (lang) => {
     });
 };
 
+// Cambiar texto del botón según el idioma actual
+const toggleLanguageButtonText = (button, currentLang) => {
+    const newLang = currentLang === "en" ? "es" : "en";
+    button.textContent = newLang === "en" ? "English" : "Spanish";
+    button.setAttribute("data-current-lang", newLang);
+};
 
-// Establecer idioma inicial
+// Establecer idioma inicial y configurar el botón
 document.addEventListener("DOMContentLoaded", () => {
-    // Asociamos el evento de cambio de idioma al botón de español
-    const spanishButton = document.getElementById('spanishButton');
-    spanishButton.addEventListener('click', () => setLanguage('es'));
-
-    // Asociamos el evento de cambio de idioma al botón de inglés
-    const englishButton = document.getElementById('englishButton');
-    englishButton.addEventListener('click', () => setLanguage('en'));
-
-    // Recuperamos el idioma guardado en localStorage y lo aplicamos
+    const languageButton = document.getElementById('languageButton');
     const savedLanguage = localStorage.getItem('language') || 'en';
+    
+    // Aplicar idioma inicial
     setLanguage(savedLanguage);
+
+    // Configurar el texto inicial del botón
+    toggleLanguageButtonText(languageButton, savedLanguage === "en" ? "es" : "en");
+
+    // Asignar evento de cambio de idioma al botón
+    languageButton.addEventListener("click", () => {
+        const currentLang = languageButton.getAttribute("data-current-lang");
+        setLanguage(currentLang);
+        toggleLanguageButtonText(languageButton, currentLang);
+    });
 });
 
 
