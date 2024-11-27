@@ -203,7 +203,7 @@ const translations = {
         currin: "<strong style='color: rgb(218, 26, 26);'>¡Important! </strong> I am continuously learning and improving every day, always seeking new challenges. I am currently available to work and contribute my energy and skills to exciting projects.",
         certificatesn: "If you wish to see more certificates, you can access all of them at <a href='https://drive.google.com/drive/folders/1KzS3HnXKfmnEUpic2mvKahpuQXOpmr8-?usp=drive_link' target='_blank' style='color: rgb(218, 26, 26); font-weight: bold;'>Google Drive here</a>",
         projectst1: "Technical test",
-        projectsp1: "Used various tools to achieve optimal results.",
+        projectsp1: "Internally, the Python program reads a provided Excel file, and once the interface is launched, the user will be able to perform various actions sequentially.",
         achievements1: "Operational Excellence - XM S.A (2024)",
         achievements2: "First place with web application - EPEMTI (2018)",
         achievements3: "Best graduation project - Fundacion Celia Duque (2018)",
@@ -214,7 +214,9 @@ const translations = {
         references1: "\"Valentina has always proven to be someone who knows how to work in a team. She is easy to collaborate with because she creates a positive and productive environment. She communicates clearly, listens attentively, and always contributes useful ideas When faced with a challenge, Valentina doesn't stop. Additionally, she knows how to handle pressure well, staying calm and making strategic decisions that benefit the team She is someone who takes her responsibilities very seriously and maintains a proactive attitude at all times.\"",
         referencesc1: "Systems Engineering Professor",
         references2: "\"Vale constantly seeks improvement, with new challenges and knowledge ranging from sports practice to her academic and professional life. She is disciplined, curious, and has a collaborative spirit, contributing to the achievement of the goals and objectives set.\"",
-        referencesc2: "Data & AI consultant"
+        referencesc2: "Data & AI consultant",
+        references3: "\"Valentina is charismatic and highly professional in her work. She is committed to achieving the goals she sets for herself, both personally and professionally. She learns quickly and has excellent listening skills, making her someone you can trust to successfully tackle the challenges she is assigned, offering innovative ideas and exceeding expectations. Her enthusiasm and joy enable her to thrive in work teams and in family and friend environments. You can always count on her unconditionally.\"",
+        referencesc3: "Energy Market Analyst"
 
 
 
@@ -275,7 +277,7 @@ const translations = {
         currin: "<strong style='color: rgb(218, 26, 26);'>¡Importante!</strong> Estoy aprendiendo y mejorando continuamente cada día, siempre buscando nuevos desafíos. Actualmente, estoy disponible para trabajar y aportar mi energía y habilidades a proyectos emocionantes.",
         certificatesn: "Si deseas ver más certificados, puedes acceder a todos ellos en <a href='https://drive.google.com/drive/folders/1KzS3HnXKfmnEUpic2mvKahpuQXOpmr8-?usp=drive_link' target='_blank' style='color: rgb(218, 26, 26); font-weight: bold;'>Google Drive aquí</a>",
         projectst1: "Prueba técnica",
-        projectsp1: "Utilicé diversas herramientas para lograr resultados óptimos.",
+        projectsp1: " Internamente el programa de Python lee un archivo  de Excel proporcionado y una vez se lance la interfaz, el usuario podrá de manera secuencial realizar diferentes acciones.",
         achievements1: "Excelencia Operacional - XM S.A (2024)",
         achievements2: "Primer lugar con aplicación web - EPEMTI (2018)",
         achievements3: "Mejor proyecto de graduación - Fundacion Celia Duque (2018)",
@@ -286,17 +288,14 @@ const translations = {
         references1: "\"Valentina siempre ha demostrado ser alguien que sabe trabajar en equipo. Es fácil colaborar con ella porque crea un ambiente positivo y productivo. Se comunica claramente, escucha atentamente y siempre aporta ideas útiles. Cuando se enfrenta a un desafío, Valentina no se detiene. Además, sabe manejar bien la presión, manteniéndose tranquila y tomando decisiones estratégicas que benefician al equipo. Es alguien que se toma sus responsabilidades muy en serio y mantiene una actitud proactiva en todo momento.\"",
         referencesc1: "Docente de Ingeniería de Sistemas",
         references2: "\"Vale busca constantemente la mejora, con nuevos desafíos y conocimientos que van desde la práctica deportiva hasta su vida académica y profesional. Es disciplinada, curiosa y tiene un espíritu colaborativo, contribuyendo al logro de los objetivos y metas establecidos.\"",
-        referencesc2: "Consultora de Datos e Inteligencia Artificial"
+        referencesc2: "Consultora de Datos e Inteligencia Artificial",
+        references3: "\"Valentina es carismática, muy profesional en su trabajo. Comprometida con el logro de los objetivos que se propone a nivel personal y profesional. Aprende muy rápido y tiene gran capacidad de escucha, lo que la convierte en una persona en la que se puede depositar la confianza de que logrará cumplir cabalmente los retos que se le encomiendan, proponiendo ideas innovadoras y superando expectativas. Su entusiasmo y alegría le permiten desenvolverse fácilmente en los grupos de trabajo y entornos de familia y amigos. Siempre contarás con ella de manera incondicional.\"",
+        referencesc3: "Analista del Mercado de Energia"
     }
 };
 
 // Cambiar idioma
 const setLanguage = (lang) => {
-    try {
-        localStorage.setItem('language', lang);
-    } catch (e) {
-        console.warn('LocalStorage no está disponible.');
-    }
     const elements = document.querySelectorAll("[data-translate]");
     elements.forEach(element => {
         const key = element.getAttribute("data-translate");
@@ -308,27 +307,25 @@ const setLanguage = (lang) => {
 const toggleLanguageButtonText = (button, currentLang) => {
     const newLang = currentLang === "en" ? "es" : "en";
     button.textContent = newLang === "en" ? "English" : "Spanish";
-    button.setAttribute("data-current-lang", newLang); 
+    button.setAttribute("data-current-lang", newLang);
 };
 
-// Establecer idioma inicial y configurar el botón
+// Configuración inicial y botón
 document.addEventListener("DOMContentLoaded", () => {
     const languageButton = document.getElementById('languageButton');
-    const savedLanguage = localStorage.getItem('language') || 'en';
 
-    // Aplicar idioma inicial
-    setLanguage(savedLanguage);
+    // Idioma predeterminado: inglés
+    setLanguage('en');
+    toggleLanguageButtonText(languageButton, 'en');
 
-    // Configurar el texto del botón con el idioma contrario al actual
-    toggleLanguageButtonText(languageButton, savedLanguage);
-
-    // Asignar evento de cambio de idioma al botón
+    // Asignar evento al botón
     languageButton.addEventListener("click", () => {
         const currentLang = languageButton.getAttribute("data-current-lang");
         setLanguage(currentLang);
         toggleLanguageButtonText(languageButton, currentLang);
     });
 });
+
 
 
 //----------------------------------------------------------------------------
