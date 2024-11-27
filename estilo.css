@@ -69,49 +69,33 @@ html{
     left: 370px;
 }
 
-/*---------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------*/
 /* Estilo para el selector de idiomas */
 
-#spanishButton {
-    position: absolute;
-    right: 10px;
+#languageButton {
+    position: relative;
+    left: 30px;
     z-index: 100;
     font-size: 14px;
+    top:14px;
+    padding: 5px 10px;
     border-radius: 0px;
-    background-color: #00bbd472;
+    background-color: #00bbd480;
 }
 
-#spanishButton:hover {
+#languageButton:hover {
     background-color: #008c9e;
 }
 
-#englishButton {
-    position: absolute;
-    right: 10px;
-    z-index: 100;
-    top: 310px;
-    font-size: 14px;
-    border-radius: 0px;
-    background-color: #00bbd472;
-}
-
-#englishButton:hover {
-    background-color: #008c9e;
-}
-
-@media (max-width: 768px) {
-
-    #spanishButton {
-        right: auto;
-        left: 10px;
-    }
-
-    #englishButton {
-        right: auto;
-        left: 10px;
-        top: 300px;
+/* Estilos para pantallas pequeñas */
+@media (max-width: 1200px) {
+    #languageButton {
+        left: auto;
+        right: 350px;
     }
 }
+
 /*----------------------------------------------------------------------------*/
 /* SECCION INICIO*/
 .inicio{
@@ -267,7 +251,6 @@ html{
 }
 
 
-/* Estilo para la superposición (overlay) */
 .language-btn .overlay {
     position: absolute;
     top: 0;
